@@ -20,7 +20,7 @@ class UserResource extends JsonResource
             'email' => $this->email,
             'is_admin' => $this->is_admin,
             'created_at' => $this->created_at->translatedFormat('d F Y'),
-            'updated_at' => $this->updated_at->translatedFormat('d F Y'),     
+            'updated_at' => $this->updated_at->translatedFormat('d F Y'),
         ];
     }
 }

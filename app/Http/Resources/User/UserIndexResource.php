@@ -18,7 +18,7 @@ class UserIndexResource extends JsonResource
             'id' => $this->id,
             'name' => $this->name,
             'email' => $this->email,
-            'created_at' => $this->created_at->translatedFormat('d F Y'),            
+            'created_at' => $this->created_at->translatedFormat('d F Y'),
         ];
     }
 }

@@ -13,11 +13,11 @@ class Task extends Model
         'tittle',
         'description',
         'upload_file',
-        'user_id'
+        'user_id',
     ];
 
     public function user()
     {
-        return $this -> belongsTo(User::class);
+        return $this->belongsTo(User::class);
     }
 }
