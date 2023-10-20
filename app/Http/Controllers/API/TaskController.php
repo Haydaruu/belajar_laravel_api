@@ -84,8 +84,9 @@ class TaskController extends Controller
     {
         $file = $request->file('upload_file')->getClientOriginalExtension();
 
-        $upload_file = null;
+        $upload_file = $task->upload_file;
         if ($request->hasFile('upload_file')) {
+            \File::delete(storage_path("app/{$upload_file}"));
             $file = $request->file('upload_file')->getClientOriginalExtension();
 
             if (in_array($file, ['jpg', 'png', 'jpeg'])) {
@@ -115,6 +116,8 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
+        \File::delete(storage_path("app/{$task->upload_file}"));
+
         $task->delete();
 
         return response()->json([], Response::HTTP_NO_CONTENT);
